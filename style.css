@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+canvas {
+  display: block;
+}
+
+/* Overlay Game Over */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+
+  display: flex;
+  justify-content: center; /* center vertikal */
+  align-items: center; /* center horizontal */
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+#overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Kontainer teks + tombol */
+.overlay-content {
+  font-family: "Press Start 2P", cursive, sans-serif;
+  display: flex;
+  flex-direction: column; /* urut ke bawah */
+  align-items: center; /* center horizontal */
+  text-align: center;
+}
+
+.overlay-content h1 {
+  color: red;
+  font-size: 60px;
+  margin-bottom: 20px; /* jarak ke tombol */
+}
+
+#restartBtn {
+  padding: 15px 30px;
+  font-size: 22px;
+  border: none;
+  border-radius: 10px;
+  background: #ff4757;
+  color: white;
+  cursor: pointer;
+}
+
+#restartBtn:hover {
+  background: #ff6b81;
+}
+
+/* Tombol Restart */
+#restartBtn {
+  font-family: "Press Start 2P", cursive, sans-serif;
+  padding: 15px 30px;
+  font-size: 22px;
+  border: none;
+  border-radius: 10px;
+  background: #ff4757;
+  color: white;
+  cursor: pointer;
+}
+
+#restartBtn:hover {
+  background: #ff6b81;
+}
+
+#scoreBoard {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 3px solid #fff;
+  border-radius: 10px;
+  font-family: "Press Start 2P", cursive, sans-serif;
+  font-size: 20px;
+  color: #ffeb3b;
+  text-shadow: 2px 2px #000;
+  z-index: 10;
+}
